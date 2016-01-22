@@ -7,7 +7,11 @@ function analytics(state, options) {
     options = {};
   }
   options.page = state.pathname;
-  ga('send', 'pageview', options);
+  ga('send', {
+    hitType: 'pageview',
+    page: state.pathname,
+    location: window.location.href
+  });
 }
 
 
