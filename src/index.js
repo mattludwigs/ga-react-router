@@ -6,7 +6,7 @@ function analytics(state, options) {
   if (!options) {
     options = {};
   }
-  options.page = state.path;
+  options.page = state.pathname;
   ga('send', 'pageview', options);
 }
 
