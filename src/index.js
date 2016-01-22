@@ -4,14 +4,12 @@ var ga = require('./ga');
 function analytics(state, options) {
   if (!options) {
     options = {};
+    options.page = state.pathname;
+    options.location = window.location.href;
+    options.hitType = 'pageview';
   }
-  options.page = state.pathname;
 
-  ga('send', {
-    hitType: 'pageview',
-    page: options.pathname,
-    location: window.location.href
-  });
+  ga('send', options);
 }
 
 
