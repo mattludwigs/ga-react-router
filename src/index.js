@@ -9,9 +9,9 @@ function analytics(state, options) {
   options.page = state.pathname;
   ga('send', {
     hitType: 'pageview',
-    page: state.pathname,
+    page: options.pathname,
     location: window.location.href
-  });
+  }, options);
 }
 
 
